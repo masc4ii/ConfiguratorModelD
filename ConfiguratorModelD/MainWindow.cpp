@@ -179,7 +179,7 @@ void MainWindow::on_actionAboutConfiguratorModelD_triggered()
                                  .arg( APPNAME )
                                  .arg( VERSION )
                                  .arg( "by masc." )
-                                 .arg( "https://github.com/..." )
+                                 .arg( "https://github.com/masc4ii/ConfiguratorModelD" )
                                  .arg( "http://www.doublejdesign.co.uk/" )
                                  .arg( "https://creativecommons.org/licenses/by/4.0/" ) );
 }
