@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>CFBundleIconFile</key>
+	<string>ConfigModelD.icns</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Created by Qt/QMake</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleExecutable</key>
+	<string>ConfiguratorModelD</string>
+	<key>CFBundleIdentifier</key>
+	<string>ConfiguratorModelD</string>
+	<key>CFBundleTypeExtensions</key>
+	<array>
+		<string>mlv</string>
+		<string>masxml</string>
+	</array>
+	<key>CFBundleTypeIconFile</key>
+	<string>ConfigModelD.icns</string>
+	<key>CFBundleTypeRole</key>
+	<string>Editor</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1</string>
+</dict>
+</plist>
