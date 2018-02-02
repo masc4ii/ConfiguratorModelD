@@ -5,4 +5,8 @@ This little app helps to configure the Behringer Model D. This synth can be setu
 
 ![pic](https://image.ibb.co/iWQEym/Bildschirmfoto.png)
 
+# Usage
+Open the program, make sure the Port is "MODEL D", change the values as you like.
+
+# Compile
 The app can be compiled for Windows, Linux and macOS. You just need Qt5.6 or newer. Open the ConfiguratorModelD.pro file in QtCreator, press the Run button and have fun!
