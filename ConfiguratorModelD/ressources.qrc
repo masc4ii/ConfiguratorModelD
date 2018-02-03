@@ -2,5 +2,6 @@
     <qresource prefix="/IMG">
         <file>IMG/Mail-icon.png</file>
         <file>IMG/ConfigModelD.png</file>
+        <file>IMG/Search-icon.png</file>
     </qresource>
 </RCC>

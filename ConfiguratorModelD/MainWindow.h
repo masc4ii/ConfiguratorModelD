@@ -41,6 +41,8 @@ private slots:
 
     void on_actionAboutConfiguratorModelD_triggered();
 
+    void on_actionFindModelD_triggered();
+
 private:
     Ui::MainWindow *ui;
     void getPorts(void);

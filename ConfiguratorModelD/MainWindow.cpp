@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_midiOut = new QMidiOut( this );
 
     getPorts();
+    searchModelD();
 }
 
 //Destructor
@@ -98,7 +99,7 @@ void MainWindow::on_actionSendAll_triggered()
 void MainWindow::on_spinBoxMidiChannel_editingFinished()
 {
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
-    std::vector<unsigned char> message = buildMessage( 0x00, (unsigned char)ui->spinBoxMidiChannel->value()-1 );
+    std::vector<unsigned char> message = buildMessage( 0x00, (unsigned char)(ui->spinBoxMidiChannel->value()-1) );
     m_midiOut->sendRawMessage( message );
     m_midiOut->closePort();
 }
@@ -134,7 +135,7 @@ void MainWindow::on_spinBoxPitchBend_editingFinished()
 void MainWindow::on_spinBoxTranspose_editingFinished()
 {
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
-    std::vector<unsigned char> message = buildMessage( 0x06, (unsigned char)ui->spinBoxTranspose->value()+12 );
+    std::vector<unsigned char> message = buildMessage( 0x06, (unsigned char)(ui->spinBoxTranspose->value()+12) );
     m_midiOut->sendRawMessage( message );
     m_midiOut->closePort();
 }
@@ -182,4 +183,12 @@ void MainWindow::on_actionAboutConfiguratorModelD_triggered()
                                  .arg( "https://github.com/masc4ii/ConfiguratorModelD" )
                                  .arg( "http://www.doublejdesign.co.uk/" )
                                  .arg( "https://creativecommons.org/licenses/by/4.0/" ) );
+}
+
+//Find Model D
+void MainWindow::on_actionFindModelD_triggered()
+{
+    ui->comboBoxPort->clear();
+    getPorts();
+    searchModelD();
 }
