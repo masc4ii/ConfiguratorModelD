@@ -12,7 +12,7 @@
 #include <QBuffer>
 
 #define APPNAME "Configurator Model D"
-#define VERSION "0.1"
+#define VERSION "0.2"
 
 //Constructor
 MainWindow::MainWindow(QWidget *parent) :
