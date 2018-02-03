@@ -6,7 +6,7 @@ This little app helps to configure the Behringer Model D. This synth can be setu
 ![pic](https://image.ibb.co/dYa6dm/Bildschirmfoto.png)
 
 ## Usage
-Open the program, make sure the Port is "MODEL D", change the values as you like.
+Open the program, make sure the Port is "MODEL D", change the values as you like. Note: the values can only be written and not loaded from the Model D. So the initial setup shown by the app might not be the one in your synth!
 
 ## Download
 Download a release [here](https://github.com/masc4ii/ConfiguratorModelD/releases).
