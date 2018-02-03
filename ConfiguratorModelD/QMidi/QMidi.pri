@@ -11,6 +11,7 @@ linux{
 }
 win32{
     DEFINES += __WINDOWS_MM__=1
+    LIBS += -lwinmm
 }
 INCLUDEPATH += $$PWD
 INCLUDEPATH += $$PWD/libs/rtmidi
