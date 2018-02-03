@@ -192,3 +192,21 @@ void MainWindow::on_actionFindModelD_triggered()
     getPorts();
     searchModelD();
 }
+
+//Midi channel value changed - do the same like editing finished
+void MainWindow::on_spinBoxMidiChannel_valueChanged(int arg1)
+{
+    on_spinBoxMidiChannel_editingFinished();
+}
+
+//Pitch bend box changed - do the same like editing finished
+void MainWindow::on_spinBoxPitchBend_valueChanged(int arg1)
+{
+    on_spinBoxPitchBend_editingFinished();
+}
+
+//Transpose box changed - do the same like editing finished
+void MainWindow::on_spinBoxTranspose_valueChanged(int arg1)
+{
+    on_spinBoxTranspose_editingFinished();
+}

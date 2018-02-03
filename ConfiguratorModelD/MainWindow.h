@@ -26,22 +26,21 @@ public:
 
 private slots:
     void on_actionSendAll_triggered();
+
     void on_comboBoxKeyPrio_activated(int index);
     void on_spinBoxMidiChannel_editingFinished();
-
     void on_comboBoxMultiTrigger_activated(int index);
-
     void on_spinBoxPitchBend_editingFinished();
-
     void on_spinBoxTranspose_editingFinished();
-
     void on_comboBoxModCurve_activated(int index);
 
     void on_actionAboutQt_triggered();
-
     void on_actionAboutConfiguratorModelD_triggered();
-
     void on_actionFindModelD_triggered();
+
+    void on_spinBoxMidiChannel_valueChanged(int arg1);
+    void on_spinBoxPitchBend_valueChanged(int arg1);
+    void on_spinBoxTranspose_valueChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;
