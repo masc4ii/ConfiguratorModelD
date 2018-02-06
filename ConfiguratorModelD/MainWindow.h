@@ -33,6 +33,10 @@ private slots:
     void on_spinBoxPitchBend_editingFinished();
     void on_spinBoxTranspose_editingFinished();
     void on_comboBoxModCurve_activated(int index);
+    void on_spinBoxMidiZeroVolts_editingFinished();
+    void on_comboBoxMidiChannelSwitches_activated(int index);
+    void on_comboBoxPolyChainEnable_activated(int index);
+    void on_spinBoxPolyChainId_editingFinished();
 
     void on_actionAboutQt_triggered();
     void on_actionAboutConfiguratorModelD_triggered();
@@ -41,6 +45,8 @@ private slots:
     void on_spinBoxMidiChannel_valueChanged(int arg1);
     void on_spinBoxPitchBend_valueChanged(int arg1);
     void on_spinBoxTranspose_valueChanged(int arg1);
+    void on_spinBoxMidiZeroVolts_valueChanged(int arg1);
+    void on_spinBoxPolyChainId_valueChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;

@@ -21,6 +21,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     setUnifiedTitleAndToolBarOnMac( true );
+    setWindowFlags( Qt::Window
+                    | Qt::WindowMinimizeButtonHint
+                    | Qt::WindowCloseButtonHint
+                    | Qt::CustomizeWindowHint );
     adjustSize();
 
     m_midiOut = new QMidiOut( this );
@@ -39,7 +43,19 @@ MainWindow::~MainWindow()
 //Get Ports and write into combobox
 void MainWindow::getPorts( void )
 {
+    bool portAvailable = true;
     ui->comboBoxPort->addItems( m_midiOut->getPorts() );
+
+    //Block GUI if no port available
+    if( ui->comboBoxPort->count() == 0 )
+    {
+        portAvailable = false;
+        statusBar()->showMessage( tr( "No MIDI port found." ), 0 );
+    }
+    ui->comboBoxPort->setEnabled( portAvailable );
+    ui->labelPort->setEnabled( portAvailable );
+    ui->groupBox->setEnabled( portAvailable );
+    ui->actionSendAll->setEnabled( portAvailable );
 }
 
 //Search the D and select it
@@ -93,6 +109,10 @@ void MainWindow::on_actionSendAll_triggered()
     on_spinBoxPitchBend_editingFinished();
     on_spinBoxTranspose_editingFinished();
     on_comboBoxModCurve_activated(0);
+    on_spinBoxMidiZeroVolts_editingFinished();
+    on_comboBoxMidiChannelSwitches_activated(0);
+    on_comboBoxPolyChainEnable_activated(0);
+    on_spinBoxPolyChainId_editingFinished();
 }
 
 //MIDI channel
@@ -145,6 +165,42 @@ void MainWindow::on_comboBoxModCurve_activated(int index)
 {
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x0B, (unsigned char)ui->comboBoxModCurve->currentIndex() );
+    m_midiOut->sendRawMessage( message );
+    m_midiOut->closePort();
+}
+
+//MIDI Zero Volts
+void MainWindow::on_spinBoxMidiZeroVolts_editingFinished()
+{
+    m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
+    std::vector<unsigned char> message = buildMessage( 0x07, (unsigned char)(ui->spinBoxMidiZeroVolts->value()) );
+    m_midiOut->sendRawMessage( message );
+    m_midiOut->closePort();
+}
+
+//MIDI channel switches
+void MainWindow::on_comboBoxMidiChannelSwitches_activated(int index)
+{
+    m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
+    std::vector<unsigned char> message = buildMessage( 0x0A, (unsigned char)ui->comboBoxMidiChannelSwitches->currentIndex() );
+    m_midiOut->sendRawMessage( message );
+    m_midiOut->closePort();
+}
+
+//Poly chain enable
+void MainWindow::on_comboBoxPolyChainEnable_activated(int index)
+{
+    m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
+    std::vector<unsigned char> message = buildMessage( 0x08, (unsigned char)ui->comboBoxPolyChainEnable->currentIndex() );
+    m_midiOut->sendRawMessage( message );
+    m_midiOut->closePort();
+}
+
+//Poly chain ID
+void MainWindow::on_spinBoxPolyChainId_editingFinished()
+{
+    m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
+    std::vector<unsigned char> message = buildMessage( 0x09, (unsigned char)(ui->spinBoxPolyChainId->value()) );
     m_midiOut->sendRawMessage( message );
     m_midiOut->closePort();
 }
@@ -209,4 +265,16 @@ void MainWindow::on_spinBoxPitchBend_valueChanged(int arg1)
 void MainWindow::on_spinBoxTranspose_valueChanged(int arg1)
 {
     on_spinBoxTranspose_editingFinished();
+}
+
+//MIDI Zero Volts box changed - do the same like editing finished
+void MainWindow::on_spinBoxMidiZeroVolts_valueChanged(int arg1)
+{
+    on_spinBoxMidiZeroVolts_editingFinished();
+}
+
+//Poly Chain ID box changed - do the same like editing finished
+void MainWindow::on_spinBoxPolyChainId_valueChanged(int arg1)
+{
+    on_spinBoxPolyChainId_editingFinished();
 }
