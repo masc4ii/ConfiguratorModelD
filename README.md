@@ -3,10 +3,17 @@ A easy configurator for Behringer Model D.
 
 This little app helps to configure the Behringer Model D. This synth can be setup by some MIDI sysex messages, which are more or less hard to create. So I started to implement this little GUI, which uses QMidi (and this uses rtMidi). So everybody can setup the Model D by some simple clicks...
 
+
+Screenshot on macOS:
+
 ![pic](https://user-images.githubusercontent.com/30245296/35990458-5b5239e6-0d04-11e8-91c5-499e85d445c5.png)
 
+Screenshot on Windows:
+
+![win](https://user-images.githubusercontent.com/30245296/36419291-c2a1ef98-1631-11e8-8065-0dfd096c051e.png)
+
 ## Usage
-Open the program, make sure the Port is "MODEL D", change the values as you like. Note: the values can only be written and not loaded from the Model D. So the initial setup shown by the app might not be the one in your synth!
+Open the tool, make sure the Port is "MODEL D", change the values as you like. Note: the values can only be written and not loaded from the Model D. So the initial setup shown by the app might not be the one in your synth!
 
 ## Download
 Download a release [here](https://github.com/masc4ii/ConfiguratorModelD/releases).
