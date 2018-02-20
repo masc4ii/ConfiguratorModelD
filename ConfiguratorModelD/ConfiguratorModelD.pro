@@ -43,6 +43,6 @@ DISTFILES += \
     ConfigModelD.ico \
     Info.plist
 
-win32: ICON = ConfigModelD.ico
+win32: RC_ICONS = ConfigModelD.ico
 macx: ICON = ConfigModelD.icns
 QMAKE_INFO_PLIST = Info.plist

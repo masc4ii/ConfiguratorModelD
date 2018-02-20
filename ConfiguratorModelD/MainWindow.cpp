@@ -214,25 +214,15 @@ void MainWindow::on_actionAboutQt_triggered()
 //About Box
 void MainWindow::on_actionAboutConfiguratorModelD_triggered()
 {
-    QPixmap pixmap = QPixmap( ":/IMG/IMG/ConfigModelD.png" )
-                .scaled( 128 * devicePixelRatio(), 112 * devicePixelRatio(),
-                         Qt::KeepAspectRatio, Qt::SmoothTransformation );
-        pixmap.setDevicePixelRatio( devicePixelRatio() );
-        QByteArray byteArray;
-        QBuffer buffer(&byteArray);
-        pixmap.save(&buffer, "PNG");
-        QString pic = QString("<img width='128' height='112' align='right' src=\"data:image/png;base64,") + byteArray.toBase64() + "\"/>";
-
-        QMessageBox::about( this, QString( "About %1" ).arg( APPNAME ),
+    QMessageBox::about( this, QString( "About %1" ).arg( APPNAME ),
                                 QString(
-                                  "<html>%1"
-                                  "<body><h3>%2</h3>"
-                                  " <p>%2 v%3</p>"
-                                  " <p>%7</p>"
-                                  " <p>See <a href='%8'>this site</a> for more information.</p>"
-                                  " <p>Some icons by <a href='%9'>Double-J Design</a> under <a href='%10'>CC4.0</a></p>"
+                                  "<html>"
+                                  "<body><h3>%1</h3>"
+                                  " <p>%1 v%2</p>"
+                                  " <p>%3</p>"
+                                  " <p>See <a href='%4'>this site</a> for more information.</p>"
+                                  " <p>Some icons by <a href='%5'>Double-J Design</a> under <a href='%6'>CC4.0</a></p>"
                                   " </body></html>" )
-                                 .arg( pic )
                                  .arg( APPNAME )
                                  .arg( VERSION )
                                  .arg( "by masc." )

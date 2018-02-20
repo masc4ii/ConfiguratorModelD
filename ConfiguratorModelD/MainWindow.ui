@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Configurator Model D</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Ressources.qrc">
+    <normaloff>:/IMG/IMG/ConfigModelD.png</normaloff>:/IMG/IMG/ConfigModelD.png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="1" column="0">
@@ -296,7 +300,7 @@
      <x>0</x>
      <y>0</y>
      <width>569</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
