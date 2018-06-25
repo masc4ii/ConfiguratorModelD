@@ -12,7 +12,7 @@
 #include <QBuffer>
 
 #define APPNAME "Configurator Model D"
-#define VERSION "0.3"
+#define VERSION "0.4"
 
 //Constructor
 MainWindow::MainWindow(QWidget *parent) :
@@ -142,6 +142,16 @@ void MainWindow::on_comboBoxMultiTrigger_activated(int index)
     m_midiOut->closePort();
 }
 
+
+//Pitch Bend Mode changed -
+void MainWindow::on_comboBoxPitchBendMode_activated(int index)
+{
+    m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
+    std::vector<unsigned char> message = buildMessage( 0x0C, (unsigned char)ui->comboBoxPitchBendMode->currentIndex() );
+    m_midiOut->sendRawMessage( message );
+    m_midiOut->closePort();
+}
+
 //Pitch Bend
 void MainWindow::on_spinBoxPitchBend_editingFinished()
 {
@@ -201,6 +211,15 @@ void MainWindow::on_spinBoxPolyChainId_editingFinished()
 {
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x09, (unsigned char)(ui->spinBoxPolyChainId->value()) );
+    m_midiOut->sendRawMessage( message );
+    m_midiOut->closePort();
+}
+
+//Poly chain style
+void MainWindow::on_comboBoxPolyChainStyle_activated(int index)
+{
+    m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
+    std::vector<unsigned char> message = buildMessage( 0x0D, (unsigned char)(ui->comboBoxPolyChainStyle->currentIndex()) );
     m_midiOut->sendRawMessage( message );
     m_midiOut->closePort();
 }
