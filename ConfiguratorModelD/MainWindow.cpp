@@ -52,6 +52,10 @@ void MainWindow::getPorts( void )
         portAvailable = false;
         statusBar()->showMessage( tr( "No MIDI port found." ), 0 );
     }
+    else
+    {
+        statusBar()->showMessage( tr( "" ), 0 );
+    }
     ui->comboBoxPort->setEnabled( portAvailable );
     ui->labelPort->setEnabled( portAvailable );
     ui->groupBox->setEnabled( portAvailable );
