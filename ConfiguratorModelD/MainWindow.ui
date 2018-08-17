@@ -222,12 +222,12 @@
           <widget class="QComboBox" name="comboBoxPitchBendMode">
            <item>
             <property name="text">
-             <string>Settable</string>
+             <string>Fixed</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Fixed</string>
+             <string>Settable</string>
             </property>
            </item>
           </widget>
