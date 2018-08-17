@@ -12,6 +12,6 @@ QMidiMessage::~QMidiMessage()
 
 QMidiMessage::QMidiMessage(const QMidiMessage &other)
 {
-
+    (void)other;
 }
 
