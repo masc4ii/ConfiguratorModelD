@@ -127,6 +127,7 @@ void MainWindow::on_spinBoxMidiChannel_editingFinished()
 //Key Prio (parameter unused)
 void MainWindow::on_comboBoxKeyPrio_activated(int index)
 {
+    (void)index;
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x01, (unsigned char)ui->comboBoxKeyPrio->currentIndex() );
     m_midiOut->sendRawMessage( message );
@@ -136,6 +137,7 @@ void MainWindow::on_comboBoxKeyPrio_activated(int index)
 //Multi Trigger (parameter unused)
 void MainWindow::on_comboBoxMultiTrigger_activated(int index)
 {
+    (void)index;
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x02, (unsigned char)ui->comboBoxMultiTrigger->currentIndex() );
     m_midiOut->sendRawMessage( message );
@@ -146,6 +148,7 @@ void MainWindow::on_comboBoxMultiTrigger_activated(int index)
 //Pitch Bend Mode changed -
 void MainWindow::on_comboBoxPitchBendMode_activated(int index)
 {
+    (void)index;
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x0C, (unsigned char)ui->comboBoxPitchBendMode->currentIndex() );
     m_midiOut->sendRawMessage( message );
@@ -173,6 +176,7 @@ void MainWindow::on_spinBoxTranspose_editingFinished()
 //Modulation Curve
 void MainWindow::on_comboBoxModCurve_activated(int index)
 {
+    (void)index;
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x0B, (unsigned char)ui->comboBoxModCurve->currentIndex() );
     m_midiOut->sendRawMessage( message );
@@ -191,6 +195,7 @@ void MainWindow::on_spinBoxMidiZeroVolts_editingFinished()
 //MIDI channel switches
 void MainWindow::on_comboBoxMidiChannelSwitches_activated(int index)
 {
+    (void)index;
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x0A, (unsigned char)ui->comboBoxMidiChannelSwitches->currentIndex() );
     m_midiOut->sendRawMessage( message );
@@ -200,6 +205,7 @@ void MainWindow::on_comboBoxMidiChannelSwitches_activated(int index)
 //Poly chain enable
 void MainWindow::on_comboBoxPolyChainEnable_activated(int index)
 {
+    (void)index;
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x08, (unsigned char)ui->comboBoxPolyChainEnable->currentIndex() );
     m_midiOut->sendRawMessage( message );
@@ -218,6 +224,7 @@ void MainWindow::on_spinBoxPolyChainId_editingFinished()
 //Poly chain style
 void MainWindow::on_comboBoxPolyChainStyle_activated(int index)
 {
+    (void)index;
     m_midiOut->openPort( ui->comboBoxPort->currentIndex() );
     std::vector<unsigned char> message = buildMessage( 0x0D, (unsigned char)(ui->comboBoxPolyChainStyle->currentIndex()) );
     m_midiOut->sendRawMessage( message );
@@ -261,29 +268,34 @@ void MainWindow::on_actionFindModelD_triggered()
 //Midi channel value changed - do the same like editing finished
 void MainWindow::on_spinBoxMidiChannel_valueChanged(int arg1)
 {
+    (void)arg1;
     on_spinBoxMidiChannel_editingFinished();
 }
 
 //Pitch bend box changed - do the same like editing finished
 void MainWindow::on_spinBoxPitchBend_valueChanged(int arg1)
 {
+    (void)arg1;
     on_spinBoxPitchBend_editingFinished();
 }
 
 //Transpose box changed - do the same like editing finished
 void MainWindow::on_spinBoxTranspose_valueChanged(int arg1)
 {
+    (void)arg1;
     on_spinBoxTranspose_editingFinished();
 }
 
 //MIDI Zero Volts box changed - do the same like editing finished
 void MainWindow::on_spinBoxMidiZeroVolts_valueChanged(int arg1)
 {
+    (void)arg1;
     on_spinBoxMidiZeroVolts_editingFinished();
 }
 
 //Poly Chain ID box changed - do the same like editing finished
 void MainWindow::on_spinBoxPolyChainId_valueChanged(int arg1)
 {
+    (void)arg1;
     on_spinBoxPolyChainId_editingFinished();
 }
